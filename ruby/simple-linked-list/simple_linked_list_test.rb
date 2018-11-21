@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require_relative 'simple_linked_list'
+require 'pry'
 
 class LinkedListTest < Minitest::Test
   def test_element
@@ -8,19 +9,19 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_element_can_hold_a_different_value
-    skip
+
     element = Element.new(10)
     assert_equal 10, element.datum
   end
 
   def test_element_next
-    skip
+ 
     element = Element.new(1)
     assert_nil element.next
   end
 
   def test_element_next_can_be_assigned_to
-    skip
+
     first  = Element.new(1)
     second = Element.new(2)
     first.next = second
@@ -28,7 +29,7 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_list_push
-    skip
+ 
     list = SimpleLinkedList.new
     element = Element.new(1)
     assert_equal list, list.push(element)
