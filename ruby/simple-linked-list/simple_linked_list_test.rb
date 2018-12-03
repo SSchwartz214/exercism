@@ -36,7 +36,7 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_list_pop
-    skip
+
     list = SimpleLinkedList.new
     element = Element.new(1)
     list.push(element)
@@ -44,13 +44,13 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_list_pop_empty
-    skip
+  
     list = SimpleLinkedList.new
     assert_nil list.pop
   end
 
   def test_list_pop_is_last_in_first_out
-    skip
+
     list = SimpleLinkedList.new
     first = Element.new(1)
     second = Element.new(2)
@@ -59,13 +59,13 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_list_empty_to_array
-    skip
+ 
     list = SimpleLinkedList.new
     assert_equal [], list.to_a
   end
 
   def test_list_single_to_array
-    skip
+  
     list = SimpleLinkedList.new
     first = Element.new(1)
     list.push(first)
@@ -73,7 +73,7 @@ class LinkedListTest < Minitest::Test
   end
 
   def test_list_multiple_to_array
-    skip
+  skip
     list = SimpleLinkedList.new
     first = Element.new(1)
     second = Element.new(2)
