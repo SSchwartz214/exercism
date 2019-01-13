@@ -1,15 +1,9 @@
 class Isogram
 
-  def self.isogram?(input)
-    sanitized_word = sanitize_word(input)   
+  def self.isogram?(letters)
+    letters_without_special_chars = letters.downcase.scan(/[a-z]/)   
 
-    sanitized_word == sanitized_word.uniq 
-  end
-
-  private
-
-  def self.sanitize_word(word)
-    word.downcase.scan(/[a-zA-Z]/)
+    letters_without_special_chars == letters_without_special_chars.uniq 
   end
 end
 
