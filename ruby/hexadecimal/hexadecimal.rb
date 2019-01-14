@@ -1,12 +1,12 @@
 class Hexadecimal
 
-  def initialize(character)
-    @character = character 
+  def initialize(hexadecimal)
+    @hexadecimal = hexadecimal 
   end
 
   def to_decimal
-    if !@character[/\H/]
-      @character.to_i(16)
+    if !@hexadecimal[/\H/]
+      @hexadecimal.to_i(16)
     else
       0
     end
