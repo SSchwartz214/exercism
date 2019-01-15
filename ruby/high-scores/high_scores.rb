@@ -1,23 +1,20 @@
 class HighScores
+  attr_reader :scores
 
   def initialize(scores)
     @scores = scores
   end
 
-  def scores
-    @scores
-  end
-
   def latest
-    @scores[-1]
+    scores[-1]
   end
 
   def personal_best
-    @scores.max
+    scores.max
   end
 
   def personal_top
-    @scores.max(3)
+    scores.max(3)
   end
 
   def score_differential
@@ -25,10 +22,14 @@ class HighScores
   end
 
   def report
+    "Your latest score was #{latest}. #{praise_and_encouragement}"
+  end
+
+  def praise_and_encouragement
     if latest < personal_best
-      "Your latest score was #{latest}. That's #{score_differential} short of your personal best!"
-    else
-      "Your latest score was #{latest}. That's your personal best!"
+      "That's #{score_differential} short of your personal best!"
+    elsif latest >= personal_best
+      "That's your personal best!"
     end
   end
 end
