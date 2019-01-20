@@ -1,25 +1,11 @@
 class Matrix
-  attr_reader :rows,
-              :columns
+  attr_reader :rows
 
   def initialize(input)
     @rows = convert_to_rows(input)
-    @columns = convert_to_columns(rows)
   end
 
-  def convert_to_rows(matrix)
-    combined_rows = matrix.split(/\n/)
-
-    rows = combined_rows.map do |row|
-      row.split(' ')
-    end
-
-    rows.map do |row|
-      row.map(&:to_i)
-    end
-  end
-
-  def convert_to_columns(rows)
+  def columns
     columns = []
     rows.each do |row|
       row.each_with_index do |number, index|
@@ -28,5 +14,15 @@ class Matrix
       end
     end
     columns
-  end
+  end 
+
+  private
+
+    def convert_to_rows(matrix)
+      combined_rows = matrix.split(/\n/)
+  
+      combined_rows.map do |row|
+        row.split(' ').map(&:to_i)
+      end
+    end
 end
