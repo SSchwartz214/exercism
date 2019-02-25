@@ -16,9 +16,9 @@ public class DotComBust {
         DotCom three = new DotCom();
         three.setName("Go2.com");
 
-        DotComList.add(one);
-        DotComList.add(two);
-        DotComList.add(three);
+        dotComList.add(one);
+        dotComList.add(two);
+        dotComList.add(three);
 
         System.out.println("Your goal is to sink three dot coms.");
         System.out.println("Pets.com, eToys.com, Go2.com.");
@@ -33,7 +33,7 @@ public class DotComBust {
     }
 
     private void startPlaying() {
-        while (!DotComList.isEmpty()) {
+        while (!dotComList.isEmpty()) {
 
             String userGuess = helper.getUserInput("Enter a guess");
             checkUserGuess(userGuess);

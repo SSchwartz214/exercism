@@ -13,7 +13,7 @@ public class DotCom {
         name = n;
     }
 
-    public String CheckYourself(String userInput) {
+    public String checkYourself(String userInput) {
         String result = "miss";
         int index = locationCells.indexOf(userInput);
 
