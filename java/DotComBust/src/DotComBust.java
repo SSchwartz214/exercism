@@ -22,7 +22,7 @@ public class DotComBust {
 
         System.out.println("Your goal is to sink three dot coms.");
         System.out.println("Pets.com, eToys.com, Go2.com.");
-        System.out.println("Your goal is to sink three dot coms.");
+        System.out.println("Try to sink them all in the fewest number of guesses.");
 
         for (DotCom dotComToSet : dotComList) {
 
