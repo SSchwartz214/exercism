@@ -3,7 +3,7 @@ import java.util.*;
 public class DotComBust {
 
     private GameHelper helper = new GameHelper();
-    private ArrayList<DotCom> dotComList = new ArrayList<DotCom>();
+    private ArrayList<DotCom> dotComsList = new ArrayList<DotCom>();
     private int numOfGuesses = 0;
 
     private void setUpGame() {
@@ -16,15 +16,15 @@ public class DotComBust {
         DotCom three = new DotCom();
         three.setName("Go2.com");
 
-        dotComList.add(one);
-        dotComList.add(two);
-        dotComList.add(three);
+        dotComsList.add(one);
+        dotComsList.add(two);
+        dotComsList.add(three);
 
         System.out.println("Your goal is to sink three dot coms.");
         System.out.println("Pets.com, eToys.com, Go2.com.");
         System.out.println("Try to sink them all in the fewest number of guesses.");
 
-        for (DotCom dotComToSet : dotComList) {
+        for (DotCom dotComToSet : dotComsList) {
 
             ArrayList<String> newLocation = helper.placeDotCom(3);
 
@@ -33,7 +33,7 @@ public class DotComBust {
     }
 
     private void startPlaying() {
-        while (!dotComList.isEmpty()) {
+        while (!dotComsList.isEmpty()) {
 
             String userGuess = helper.getUserInput("Enter a guess");
             checkUserGuess(userGuess);
@@ -47,17 +47,16 @@ public class DotComBust {
 
         String result = "miss";
 
-        for (DotCom dotCom : dotComList) {
+        for (DotCom dotComToTest : dotComsList ) {
 
-            result = dotCom.checkYourself(userGuess);
+            result = dotComToTest.checkYourself(userGuess);
 
             if (result.equals("hit")) {
-
                 break;
             }
             if (result.equals("kill")) {
 
-                dotComList.remove(dotCom);
+                dotComsList.remove(dotComToTest);
                 break;
             }
         }
